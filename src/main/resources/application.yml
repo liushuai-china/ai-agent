@@ -1,6 +1,14 @@
 spring:
   application:
     name: ai-agent
+  profiles:
+    active: local
+  ai:
+    dashscope:
+      api-key: you-api-key
+      chat:
+        options:
+          model: your-model
 server:
   port: 8123
   servlet:
@@ -22,3 +30,8 @@ knife4j:
   enable: true
   setting:
     language: zh_cn
+
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
